@@ -15,7 +15,7 @@ WHISPER_MODEL = "large-v3"      # "medium", "small" ak chceš nižšie nároky
 WHISPER_DEVICE = "cuda"         # "cpu" ak nechceš GPU
 COMPUTE_TYPE = "int8_float16"   # "float16" | "int8" | "int8_float16"
 INPUT_FOLDER = Path("video_files")
-OUTPUT_FOLDER = Path("transcripts")
+OUTPUT_FOLDER = Path("transcripts_out")
 DELETE_ORIGINAL_MKV = False
 # =======================
 

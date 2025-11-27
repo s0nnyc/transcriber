@@ -262,8 +262,8 @@ After reinstalling Linux (or on a new machine):
 
 ```bash
 # 1) Clone repo
-git clone https://github.com/<your-username>/transcripts.git
-cd transcripts
+git clone https://github.com/<your-username>/transcriber.git
+cd transcriber
 
 # 2) Create venv
 python3 -m venv .venv

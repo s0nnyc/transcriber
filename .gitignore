@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+video_files/
+transcripts_out/
+*.mkv
+*.mp4
+*.wav
+*.log
+
+# CUDA cache (if any)
+.nv/

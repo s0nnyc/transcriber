@@ -1,0 +1,77 @@
+ii  cuda-cccl-13-0                                  13.0.85-1                                amd64        CUDA CCCL
+ii  cuda-command-line-tools-13-0                    13.0.2-1                                 amd64        CUDA command-line tools
+ii  cuda-compiler-13-0                              13.0.2-1                                 amd64        CUDA compiler
+ii  cuda-crt-13-0                                   13.0.88-1                                amd64        CUDA crt
+ii  cuda-cudart-13-0                                13.0.96-1                                amd64        CUDA Runtime native Libraries
+ii  cuda-cudart-dev-13-0                            13.0.96-1                                amd64        CUDA Runtime native dev links, headers
+ii  cuda-culibos-dev-13-0                           13.0.85-1                                amd64        CUDA DEV culibos is a Math Libraries fork of the cuos library
+ii  cuda-cuobjdump-13-0                             13.0.85-1                                amd64        CUDA cuobjdump
+ii  cuda-cupti-13-0                                 13.0.85-1                                amd64        CUDA profiling tools runtime libs.
+ii  cuda-cupti-dev-13-0                             13.0.85-1                                amd64        CUDA profiling tools interface.
+ii  cuda-cuxxfilt-13-0                              13.0.85-1                                amd64        CUDA cuxxfilt
+ii  cuda-documentation-13-0                         13.0.85-1                                amd64        CUDA documentation
+ii  cuda-driver-dev-13-0                            13.0.96-1                                amd64        CUDA Driver native dev stub library
+ii  cuda-gdb-13-0                                   13.0.85-1                                amd64        CUDA-GDB
+ii  cuda-keyring                                    1.1-1                                    all          GPG keyring for the CUDA repository
+ii  cuda-libraries-13-0                             13.0.2-1                                 amd64        CUDA Libraries 13.0 meta-package
+ii  cuda-libraries-dev-13-0                         13.0.2-1                                 amd64        CUDA Libraries 13.0 development meta-package
+ii  cuda-nsight-13-0                                13.0.85-1                                amd64        CUDA nsight
+ii  cuda-nsight-compute-13-0                        13.0.2-1                                 amd64        NVIDIA Nsight Compute
+ii  cuda-nsight-systems-13-0                        13.0.2-1                                 amd64        NVIDIA Nsight Systems
+ii  cuda-nvcc-13-0                                  13.0.88-1                                amd64        CUDA nvcc
+ii  cuda-nvdisasm-13-0                              13.0.85-1                                amd64        CUDA disassembler
+ii  cuda-nvml-dev-13-0                              13.0.87-1                                amd64        NVML native dev links, headers
+ii  cuda-nvprune-13-0                               13.0.85-1                                amd64        CUDA nvprune
+ii  cuda-nvrtc-13-0                                 13.0.88-1                                amd64        NVRTC native runtime libraries
+ii  cuda-nvrtc-dev-13-0                             13.0.88-1                                amd64        NVRTC native dev links, headers
+ii  cuda-nvtx-13-0                                  13.0.85-1                                amd64        NVIDIA Tools Extension
+ii  cuda-opencl-13-0                                13.0.85-1                                amd64        CUDA OpenCL native Libraries
+ii  cuda-profiler-api-13-0                          13.0.85-1                                amd64        CUDA Profiler API
+ii  cuda-sandbox-dev-13-0                           13.0.85-1                                amd64        nvsandboxutils native dev links, headers
+ii  cuda-sanitizer-13-0                             13.0.85-1                                amd64        CUDA Sanitizer
+ii  cuda-toolkit-13-0                               13.0.2-1                                 amd64        CUDA Toolkit 13.0 meta-package
+ii  cuda-toolkit-13-0-config-common                 13.0.96-1                                all          Common config package for CUDA Toolkit 13.0.
+ii  cuda-toolkit-13-config-common                   13.0.96-1                                all          Common config package for CUDA Toolkit 13.
+ii  cuda-toolkit-config-common                      13.0.96-1                                all          Common config package for CUDA Toolkit.
+ii  cuda-tools-13-0                                 13.0.2-1                                 amd64        CUDA Tools meta-package
+ii  cuda-visual-tools-13-0                          13.0.2-1                                 amd64        CUDA visual tools
+ii  cudnn9-cuda-13                                  9.16.0.29-1                              amd64        NVIDIA cuDNN for CUDA 13
+ii  cudnn9-cuda-13-0                                9.16.0.29-1                              amd64        NVIDIA cuDNN for CUDA 13.0
+ii  libcudnn9-cuda-13                               9.16.0.29-1                              amd64        cuDNN runtime libraries for CUDA 13.0
+ii  libcudnn9-dev-cuda-13                           9.16.0.29-1                              amd64        cuDNN development libraries for CUDA 13.0
+ii  libcudnn9-headers-cuda-13                       9.16.0.29-1                              amd64        cuDNN header files for CUDA 13.0
+ii  libcudnn9-static-cuda-13                        9.16.0.29-1                              amd64        cuDNN static libraries for CUDA 13.0
+ii  libcufile-13-0                                  1.15.1.6-1                               amd64        Library for GPU Direct Storage with CUDA 13.0
+ii  libcusolver-13-0                                12.0.4.66-1                              amd64        CUDA solver native runtime libraries
+ii  libcusolver-dev-13-0                            12.0.4.66-1                              amd64        CUDA solver native dev links, headers
+ii  libnvidia-cfg1-580:amd64                        580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-common-580                            580.95.05-0ubuntu0.24.04.2               all          Shared files used by the NVIDIA libraries
+ii  libnvidia-compute-580:amd64                     580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA libcompute package
+ii  libnvidia-compute-580:i386                      580.95.05-0ubuntu0.24.04.2               i386         NVIDIA libcompute package
+ii  libnvidia-decode-580:amd64                      580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-decode-580:i386                       580.95.05-0ubuntu0.24.04.2               i386         NVIDIA Video Decoding runtime libraries
+ii  libnvidia-egl-wayland1:amd64                    1:1.1.13-1ubuntu0.1                      amd64        Wayland EGL External Platform library -- shared library
+ii  libnvidia-egl-wayland1:i386                     1:1.1.13-1ubuntu0.1                      i386         Wayland EGL External Platform library -- shared library
+ii  libnvidia-encode-580:amd64                      580.95.05-0ubuntu0.24.04.2               amd64        NVENC Video Encoding runtime library
+ii  libnvidia-encode-580:i386                       580.95.05-0ubuntu0.24.04.2               i386         NVENC Video Encoding runtime library
+ii  libnvidia-extra-580:amd64                       580.95.05-0ubuntu0.24.04.2               amd64        Extra libraries for the NVIDIA driver
+ii  libnvidia-fbc1-580:amd64                        580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-fbc1-580:i386                         580.95.05-0ubuntu0.24.04.2               i386         NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-gl-580:amd64                          580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  libnvidia-gl-580:i386                           580.95.05-0ubuntu0.24.04.2               i386         NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  libnvptxcompiler-13-0                           13.0.88-1                                amd64        CUDA nvptxcompiler
+ii  libnvvm-13-0                                    13.0.88-1                                amd64        CUDA nvvm
+ii  linux-modules-nvidia-580-open-6.14.0-34-generic 6.14.0-34.34~24.04.1+1                   amd64        Linux kernel nvidia modules for version 6.14.0-34
+ii  linux-modules-nvidia-580-open-6.14.0-36-generic 6.14.0-36.36~24.04.1+1                   amd64        Linux kernel nvidia modules for version 6.14.0-36
+ii  linux-modules-nvidia-580-open-generic-hwe-24.04 6.14.0-36.36~24.04.1+1                   amd64        Extra drivers for nvidia-580-open for the generic-hwe-24.04 flavour
+ii  nsight-compute-2025.3.1                         2025.3.1.4-1                             amd64        NVIDIA Nsight Compute
+ii  nvidia-compute-utils-580                        580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA compute utilities
+ii  nvidia-driver-580-open                          580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA driver (open kernel) metapackage
+ii  nvidia-firmware-580-580.95.05                   580.95.05-0ubuntu0.24.04.2               amd64        Firmware files used by the kernel module
+ii  nvidia-kernel-common-580                        580.95.05-0ubuntu0.24.04.2               amd64        Shared files used with the kernel module
+ii  nvidia-kernel-source-580-open                   580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA kernel source package
+ii  nvidia-prime                                    0.8.17.2                                 all          Tools to enable NVIDIA's Prime
+ii  nvidia-settings                                 510.47.03-0ubuntu4                       amd64        Tool for configuring the NVIDIA graphics driver
+ii  nvidia-utils-580                                580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA driver support binaries
+ii  screen-resolution-extra                         0.18.3ubuntu0.24.04.1                    all          Extension for the nvidia-settings control panel
+ii  xserver-xorg-video-nvidia-580                   580.95.05-0ubuntu0.24.04.2               amd64        NVIDIA binary Xorg driver

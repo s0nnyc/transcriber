@@ -7,6 +7,6 @@
 #   print("CUDNN_LIB=", resources.files("nvidia.cudnn") / "lib")
 #   EOF
 
-export CUBLAS_LIB="/ABS/PATH/TO/.venv/lib/python3.12/site-packages/nvidia/cublas/lib"
-export CUDNN_LIB="/ABS/PATH/TO/.venv/lib/python3.12/site-packages/nvidia/cudnn/lib"
+export CUBLAS_LIB=/home/altaira/python_projects/transcriber/.venv/lib/python3.12/site-packages/nvidia/cublas/lib
+export CUDNN_LIB=/home/altaira/python_projects/transcriber/.venv/lib/python3.12/site-packages/nvidia/cudnn/lib
 export LD_LIBRARY_PATH="$CUBLAS_LIB:$CUDNN_LIB:$LD_LIBRARY_PATH"

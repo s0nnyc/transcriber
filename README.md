@@ -23,7 +23,6 @@ Example layout (adapt names to your actual project):
 
 ```text
 .
-├─ src/                      # transcription and helper scripts
 ├─ video_files/              # input videos (ignored by git)
 ├─ transcripts_out/          # output transcripts (ignored by git or committed selectively)
 ├─ .venv/                    # Python virtual environment (not committed)

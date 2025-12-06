@@ -110,6 +110,10 @@ The helper script `cuda_env.sh` sets `LD_LIBRARY_PATH` to point at the libraries
 #   print("CUDNN_LIB=", resources.files("nvidia.cudnn") / "lib")
 #   EOF
 
+# IMPORTANT: mind the space before /home so you don't end up like this
+# export CUBLAS_LIB= "/home/your_pc/...
+# export CUDNN_LIB= "/home/your_pc/..
+
 export CUBLAS_LIB="/ABS/PATH/TO/.venv/lib/python3.12/site-packages/nvidia/cublas/lib"
 export CUDNN_LIB="/ABS/PATH/TO/.venv/lib/python3.12/site-packages/nvidia/cudnn/lib"
 export LD_LIBRARY_PATH="$CUBLAS_LIB:$CUDNN_LIB:$LD_LIBRARY_PATH"

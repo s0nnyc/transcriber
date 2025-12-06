@@ -64,7 +64,11 @@ Clone the repository and prepare the environment:
 git clone https://github.com/<your-username>/transcripts.git
 cd transcripts
 
-# Create venv
+# Check your python version
+python3 --version
+
+# Create venv (update python version based on previous command)
+sudo apt install python3.12-venv
 python3 -m venv .venv
 source .venv/bin/activate
 

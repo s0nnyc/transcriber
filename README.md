@@ -197,7 +197,7 @@ Create a new empty repo on GitHub (no README, no .gitignore) and add it as remot
 
 ```bash
 git branch -M main
-git remote add origin https://github.com/<your-username>/transcripts.git
+git remote add origin https://github.com/s0nnyc/transcripts.git
 git push -u origin main
 ```
 
@@ -207,7 +207,7 @@ From Git Bash or any shell:
 
 ```bash
 # Clone the repo
-git clone https://github.com/<your-username>/transcripts.git
+git clone https://github.com/s0nnyc/transcripts.git
 cd transcripts
 
 # Check current status
@@ -275,7 +275,7 @@ After reinstalling Linux (or on a new machine):
 
 ```bash
 # 1) Clone repo
-git clone https://github.com/<your-username>/transcriber.git
+git clone https://github.com/s0nnyc/transcriber.git
 cd transcriber
 
 # 2) Create venv

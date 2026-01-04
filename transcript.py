@@ -17,7 +17,7 @@ COMPUTE_TYPE = "int8_float16"   # "float16" | "int8" | "int8_float16"
 TRANSCRIPTION_LANGUAGE = "sk"   # Language code passed to faster-whisper
 INPUT_FOLDER = Path("video_files")
 OUTPUT_FOLDER = Path("transcripts_out")
-DELETE_ORIGINAL_MKV = False
+DELETE_ORIGINAL_MKV = True
 # =======================
 
 # Supported media extensions for scanning input folders.

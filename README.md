@@ -61,7 +61,7 @@ Example layout (adapt names to your actual project):
 Clone the repository and prepare the environment:
 
 ```bash
-git clone https://github.com/<your-username>/transcripts.git
+git clone https://github.com/s0nnyc/transcripts.git
 cd transcripts
 
 # Check your python version

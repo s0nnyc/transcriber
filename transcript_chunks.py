@@ -17,7 +17,8 @@ COMPUTE_TYPE = "int8_float16"   # "float16" | "int8" | "int8_float16"
 TRANSCRIPTION_LANGUAGE = "sk"   # Language code passed to faster-whisper
 INPUT_FOLDER = Path("video_files")
 OUTPUT_FOLDER = Path("transcripts_out")
-DELETE_ORIGINAL_MEDIA = True
+DELETE_ORIGINAL_MKV = True
+CHUNK_LENGTH_SECONDS = 60       # Use chunking to reduce VRAM spikes on long files
 # =======================
 
 # Supported media extensions for scanning input folders.
@@ -56,7 +57,7 @@ def transcribe_audio(model: WhisperModel, media_path: Path, transcript_path: Pat
         str(media_path),
         language=TRANSCRIPTION_LANGUAGE,
         vad_filter=False,
-        chunk_length=None,  # disable chunking so the model sees the full context
+        chunk_length=CHUNK_LENGTH_SECONDS,
     )
     text = "".join(seg.text for seg in segments).strip()
 
@@ -107,7 +108,7 @@ def main() -> None:
             # faster-whisper (PyAV) reads the audio track directly; no separate extraction is needed.
             transcribe_audio(model, media_path, transcript_file, progress)
 
-            if DELETE_ORIGINAL_MEDIA and media_path.suffix.lower() in SUPPORTED_EXTS:
+            if DELETE_ORIGINAL_MKV and media_path.suffix.lower() == ".mkv":
                 cleanup([media_path])
 
         except Exception as exc:

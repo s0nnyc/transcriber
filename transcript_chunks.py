@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import shutil
+import subprocess
 import time
 from collections import Counter
 from datetime import timedelta
@@ -17,8 +19,9 @@ COMPUTE_TYPE = "int8_float16"   # "float16" | "int8" | "int8_float16"
 TRANSCRIPTION_LANGUAGE = "sk"   # Language code passed to faster-whisper
 INPUT_FOLDER = Path("video_files")
 OUTPUT_FOLDER = Path("transcripts_out")
-DELETE_ORIGINAL_MKV = True
-CHUNK_LENGTH_SECONDS = 60       # Use chunking to reduce VRAM spikes on long files
+DELETE_ORIGINAL_MEDIA = True
+CHUNK_LENGTH_SECONDS = 600       # 5-minute chunks balance memory use and overhead
+DELETE_TEMP_CHUNKS = True
 # =======================
 
 # Supported media extensions for scanning input folders.
@@ -49,17 +52,73 @@ def find_media_files(input_folder: Path) -> list[Path]:
 
 
 # Run faster-whisper on a single file and persist the transcript text.
+def split_media_into_chunks(media_path: Path, chunks_dir: Path) -> list[Path]:
+    if not shutil.which("ffmpeg"):
+        print(Fore.RED + "ffmpeg is required for chunking but was not found in PATH.")
+        raise SystemExit(1)
+
+    chunks_dir.mkdir(parents=True, exist_ok=True)
+    chunk_pattern = chunks_dir / "chunk_%05d.wav"
+
+    cmd = [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-i",
+        str(media_path),
+        "-vn",
+        "-ac",
+        "1",
+        "-ar",
+        "16000",
+        "-f",
+        "segment",
+        "-segment_time",
+        str(CHUNK_LENGTH_SECONDS),
+        "-reset_timestamps",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        str(chunk_pattern),
+    ]
+    print(Fore.CYAN + f"Splitting into chunks: {media_path.name}")
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as exc:
+        print(Fore.RED + f"ffmpeg failed while chunking '{media_path.name}': {exc}")
+        raise SystemExit(1)
+
+    chunks = sorted(chunks_dir.glob("chunk_*.wav"))
+    if not chunks:
+        print(Fore.RED + f"No chunks produced for '{media_path.name}'.")
+        raise SystemExit(1)
+    return chunks
+
+
 def transcribe_audio(model: WhisperModel, media_path: Path, transcript_path: Path, progress: str) -> None:
     print(Fore.CYAN + f"{progress} Transcribing: {media_path.name}")
     start_time = time.perf_counter()
 
-    segments, info = model.transcribe(
-        str(media_path),
-        language=TRANSCRIPTION_LANGUAGE,
-        vad_filter=False,
-        chunk_length=CHUNK_LENGTH_SECONDS,
-    )
-    text = "".join(seg.text for seg in segments).strip()
+    chunks_dir = transcript_path.parent / f"chunks_{media_path.stem}"
+    chunks = split_media_into_chunks(media_path, chunks_dir)
+
+    text_parts: list[str] = []
+    total_chunks = len(chunks)
+    info = None
+    for idx, chunk_path in enumerate(chunks, start=1):
+        chunk_progress = f"{progress} [chunk {idx}/{total_chunks}]"
+        print(Fore.LIGHTBLUE_EX + f"{chunk_progress} {chunk_path.name}")
+
+        segments, info = model.transcribe(
+            str(chunk_path),
+            language=TRANSCRIPTION_LANGUAGE,
+            vad_filter=False,
+            chunk_length=None,
+        )
+        text_parts.append("".join(seg.text for seg in segments).strip())
+
+    text = " ".join(part for part in text_parts if part).strip()
 
     duration = timedelta(seconds=int(time.perf_counter() - start_time))
     transcript_path.parent.mkdir(parents=True, exist_ok=True)
@@ -71,6 +130,13 @@ def transcribe_audio(model: WhisperModel, media_path: Path, transcript_path: Pat
         + "🕒 Transcription took: "
         + f"{duration} | detected language: {getattr(info, 'language', 'n/a')}"
     )
+
+    if DELETE_TEMP_CHUNKS:
+        cleanup(list(chunks_dir.glob("chunk_*.wav")))
+        try:
+            chunks_dir.rmdir()
+        except OSError:
+            pass
 
 
 # Remove any temporary or source files slated for deletion.
@@ -108,7 +174,7 @@ def main() -> None:
             # faster-whisper (PyAV) reads the audio track directly; no separate extraction is needed.
             transcribe_audio(model, media_path, transcript_file, progress)
 
-            if DELETE_ORIGINAL_MKV and media_path.suffix.lower() == ".mkv":
+            if DELETE_ORIGINAL_MEDIA and media_path.suffix.lower() in SUPPORTED_EXTS:
                 cleanup([media_path])
 
         except Exception as exc:

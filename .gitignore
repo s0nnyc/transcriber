@@ -28,3 +28,4 @@ transcripts_out/
 
 # CUDA cache (if any)
 .nv/
+cuda_env.sh

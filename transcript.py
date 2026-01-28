@@ -11,7 +11,7 @@ from faster_whisper import WhisperModel
 init(autoreset=True)
 
 # ==== CONFIGURATION ====
-WHISPER_MODEL = "large-v3"      # "medium", "small" if you want lower requirements
+WHISPER_MODEL = "large"      # "medium", "small" if you want lower requirements
 WHISPER_DEVICE = "cuda"         # "cpu" if you do not want GPU
 COMPUTE_TYPE = "int8_float16"   # "float16" | "int8" | "int8_float16"
 TRANSCRIPTION_LANGUAGE = "sk"   # Language code passed to faster-whisper

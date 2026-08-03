@@ -1,0 +1,5 @@
+# Direct runtime dependencies. Compile with uv for a fully pinned lock.
+colorama==0.4.6
+faster-whisper==1.2.1
+nvidia-cublas-cu12==12.9.1.4
+nvidia-cudnn-cu12==9.20.0.48
